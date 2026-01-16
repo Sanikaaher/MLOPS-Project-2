@@ -1,0 +1,13 @@
+apache-airflow-providers-google
+apache-airflow-providers-postgres
+pandas
+numpy
+setuptools
+sqlalchemy
+psycopg2-binary
+scikit-learn
+imbalanced-learn
+redis
+flask
+alibi-detect
+prometheus_client

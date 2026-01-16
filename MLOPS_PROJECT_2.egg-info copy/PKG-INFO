@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: MLOPS-PROJECT-2
+Version: 0.1
+Author: Sanika
+Requires-Dist: apache-airflow-providers-google
+Requires-Dist: apache-airflow-providers-postgres
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: setuptools
+Requires-Dist: sqlalchemy
+Requires-Dist: psycopg2-binary
+Requires-Dist: scikit-learn
+Dynamic: author
+Dynamic: requires-dist
