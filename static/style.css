@@ -1,0 +1,158 @@
+/* ---------- Variables & Theme ---------- */
+:root {
+    /* Color Palette (Indigo Theme) */
+    --primary-color: #6366f1;
+    --primary-dark: #4f46e5;
+    --primary-glow: rgba(99, 102, 241, 0.4);
+    
+    /* Backgrounds */
+    --bg-body: #f3f4f6;
+    --bg-card: #ffffff;
+    --bg-input: #f9fafb;
+    
+    /* Text Colors */
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    
+    /* Borders & Shadows */
+    --border-color: #e5e7eb;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --shadow-card: 0 10px 30px -5px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ---------- Global Reset ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased; /* Smoother text on Mac */
+}
+
+/* ---------- Body ---------- */
+body {
+    font-family: 'Inter', "Segoe UI", sans-serif; /* Suggesting Inter if available */
+    background: radial-gradient(circle at top left, #eef2ff, #e0e7ff);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-main);
+}
+
+/* ---------- Main Container ---------- */
+.container {
+    background: var(--bg-card);
+    width: 440px;
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    animation: slideUp 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Subtle highlight border */
+}
+
+/* ---------- Title ---------- */
+.container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-main);
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* ---------- Labels ---------- */
+label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.3px;
+}
+
+/* ---------- Inputs & Select ---------- */
+input,
+select {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-input);
+    font-size: 15px;
+    color: var(--text-main);
+    transition: var(--transition);
+    appearance: none; /* Removes native UI styles */
+}
+
+/* ---------- Input Hover & Focus ---------- */
+input:hover,
+select:hover {
+    border-color: #c7d2fe;
+    background-color: #fff;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: #fff;
+    /* Creating a soft glow ring */
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15); 
+}
+
+/* ---------- Submit Button ---------- */
+button {
+    width: 100%;
+    margin-top: 32px;
+    padding: 15px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    border: none;
+    border-radius: var(--radius-md);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    /* Soft colored shadow matching the button */
+    box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+/* ---------- Button Hover ---------- */
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px var(--primary-glow);
+    filter: brightness(1.05);
+}
+
+/* ---------- Button Active ---------- */
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* ---------- Animations ---------- */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 25px;
+        margin: 20px;
+    }
+    
+    .container h2 {
+        font-size: 24px;
+    }
+}

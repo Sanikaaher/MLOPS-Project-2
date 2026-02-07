@@ -1,45 +1,56 @@
-Overview
-========
+# 🚀 MLOps Project 2 – End-to-End ML Pipeline with Monitoring
 
-Welcome to Astronomer! This project was generated after you ran 'astro dev init' using the Astronomer CLI. This readme describes the contents of the project, as well as how to run Apache Airflow on your local machine.
+This project focuses on **hands-on MLOps concepts**, especially **orchestration and monitoring of ML systems in a production-like setup**.
 
-Project Contents
-================
+The goal was not model accuracy, but understanding how ML pipelines behave **after deployment**.
 
-Your Astro project contains the following files and folders:
+---
 
-- dags: This folder contains the Python files for your Airflow DAGs. By default, this directory includes one example DAG:
-    - `example_astronauts`: This DAG shows a simple ETL pipeline example that queries the list of astronauts currently in space from the Open Notify API and prints a statement for each astronaut. The DAG uses the TaskFlow API to define tasks in Python, and dynamic task mapping to dynamically print a statement for each astronaut. For more on how this DAG works, see our [Getting started tutorial](https://www.astronomer.io/docs/learn/get-started-with-airflow).
-- Dockerfile: This file contains a versioned Astro Runtime Docker image that provides a differentiated Airflow experience. If you want to execute other commands or overrides at runtime, specify them here.
-- include: This folder contains any additional files that you want to include as part of your project. It is empty by default.
-- packages.txt: Install OS-level packages needed for your project by adding them to this file. It is empty by default.
-- requirements.txt: Install Python packages needed for your project by adding them to this file. It is empty by default.
-- plugins: Add custom or community plugins for your project to this file. It is empty by default.
-- airflow_settings.yaml: Use this local-only file to specify Airflow Connections, Variables, and Pools instead of entering them in the Airflow UI as you develop DAGs in this project.
+## 🧠 Tech Stack
+- **Dataset**: Titanic
+- **Orchestration**: Astro Airflow
+- **Containerization**: Docker
+- **Storage**: Google Cloud Storage
+- **Backend / UI**: Flask
+- **Feature Store**: Redis
+- **Monitoring**: Prometheus & Grafana
 
-Deploy Your Project Locally
-===========================
+---
 
-Start Airflow on your local machine by running 'astro dev start'.
+## 🔄 Pipeline Overview
+1. Data stored in Google Cloud Storage
+2. Airflow DAG orchestrates the ML pipeline
+3. Features are stored and fetched from Redis
+4. Model is served via Flask
+5. Prometheus scrapes application metrics
+6. Grafana visualizes system & prediction metrics
 
-This command will spin up five Docker containers on your machine, each for a different Airflow component:
+---
 
-- Postgres: Airflow's Metadata Database
-- Scheduler: The Airflow component responsible for monitoring and triggering tasks
-- DAG Processor: The Airflow component responsible for parsing DAGs
-- API Server: The Airflow component responsible for serving the Airflow UI and API
-- Triggerer: The Airflow component responsible for triggering deferred tasks
+## 📊 Monitoring & Observability
+- Prometheus scrapes metrics from the Flask `/metrics` endpoint
+- Grafana dashboards visualize:
+  - Prediction count
+  - Application health
+  - Runtime metrics
 
-When all five containers are ready the command will open the browser to the Airflow UI at http://localhost:8080/. You should also be able to access your Postgres Database at 'localhost:5432/postgres' with username 'postgres' and password 'postgres'.
 
-Note: If you already have either of the above ports allocated, you can either [stop your existing Docker containers or change the port](https://www.astronomer.io/docs/astro/cli/troubleshoot-locally#ports-are-not-available-for-my-local-airflow-webserver).
 
-Deploy Your Project to Astronomer
-=================================
+---
 
-If you have an Astronomer account, pushing code to a Deployment on Astronomer is simple. For deploying instructions, refer to Astronomer documentation: https://www.astronomer.io/docs/astro/deploy-code/
+## 🚀 Key Learnings
+- Building production-like ML pipelines
+- Monitoring deployed ML systems
+- Understanding observability in MLOps
+- Orchestrating workflows using Airflow
 
-Contact
-=======
+---
 
-The Astronomer CLI is maintained with love by the Astronomer team. To report a bug or suggest a change, reach out to our support.
+## 📌 Note
+The Titanic dataset was intentionally chosen to keep the focus on **MLOps infrastructure and monitoring**, not model performance.
+
+---
+
+## 👩‍💻 Author
+Sanika Shantaram Aher  
+Final Year AIML | Aspiring ML / MLOps Engineer
